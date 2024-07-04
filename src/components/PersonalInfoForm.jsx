@@ -7,8 +7,6 @@ const PersonalInfoForm = ({ onChange }) => {
     email: '',
     address: '',
     phone: '',
-    education: '',
-    experience: '',
   });
 
   const handleChange = (e) => {
@@ -49,18 +47,6 @@ const PersonalInfoForm = ({ onChange }) => {
         <label>
           Address:
           <input type="text" name="address" value={form.address} onChange={handleChange} />
-        </label>
-      </div>
-      <div>
-        <label>
-          Education:
-          <input type="text" name="education" value={form.education} onChange={handleChange} />
-        </label>
-      </div>
-      <div>
-        <label>
-          Experience:
-          <input type="text" name="experience" value={form.experience} onChange={handleChange} />
         </label>
       </div>
     </form>

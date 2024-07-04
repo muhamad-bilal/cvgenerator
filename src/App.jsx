@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import React, { useState } from 'react';
+import Header from './components/Header';
+import PersonalInfoForm from './components/PersonalInfoForm';
+import CVPreview from './components/CVPreview';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import EducationForm from './components/EducationForm';
+import ExperienceForm from './components/ExperienceForm';
+import './style.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    const [personalInfo, setPersonalInfo] = useState({});
+    const [education, setEducation] = useState([]);
+    const [experience, setExperience] = useState([]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    const addEducation = (edu) => {
+        setEducation((prevEducation) => [...prevEducation, edu]);
+    };
 
-export default App
+    const addExperience = (exp) => {
+        setExperience((prevExperience) => [...prevExperience, exp]);
+    };
+
+    const deleteEducation = (index) => {
+        setEducation((prevEducation) => prevEducation.filter((_, i) => i !== index));
+    };
+
+    const deleteExperience = (index) => {
+        setExperience((prevExperience) => prevExperience.filter((_, i) => i !== index));
+    };
+
+    return (
+        <div className="App">
+            <Header />
+            <div className="group1">
+                <div className="personal-info">
+                    <PersonalInfoForm onChange={setPersonalInfo} />
+                    <EducationForm onAdd={addEducation} />
+                    <Education education={education} onDelete={deleteEducation} />
+                    <ExperienceForm onAdd={addExperience} />
+                    <Experience experience={experience} onDelete={deleteExperience} />
+                </div>
+                <div className="cv-preview">
+                    <CVPreview personalInfo={personalInfo} education={education} experience={experience} />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default App;
