@@ -4,7 +4,6 @@ import React from 'react';
 const Experience = ({ experience, onDelete }) => {
     return (
         <div className="experience">
-            <h2>Experience</h2>
             {experience.map((exp, index) => (
                 <div key={index} className="experience-item">
                     <h3>{exp.company}</h3>

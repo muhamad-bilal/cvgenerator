@@ -66,6 +66,7 @@ form input, form textarea {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-bottom: 1%;
 }
 
 /* Style for the personal info and form sections */
@@ -74,13 +75,13 @@ form input, form textarea {
   min-width: 300px;
 }
 
+
 /* Improved CV preview section */
 .cv-preview {
   flex: 1;
   min-width: 300px;
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 4px;
   background-color: #fff;
   overflow-y: auto;
@@ -134,8 +135,11 @@ form input, form textarea {
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+  margin-bottom: 2%;
 }
 
 .collapsible-active .collapsible-content {
   display: block;
+  margin-bottom: 2%;
+  padding: 2%;
 }

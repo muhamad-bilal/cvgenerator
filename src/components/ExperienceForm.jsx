@@ -32,7 +32,6 @@ const ExperienceForm = ({ onAdd }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Experience</h2>
 
             <input
                 type="text"

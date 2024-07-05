@@ -23,7 +23,6 @@ const PersonalInfoForm = ({ onChange }) => {
 
   return (
     <form>
-          <h2>Personal Information</h2>
 
       <div>
         <label>

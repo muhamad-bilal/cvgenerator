@@ -30,7 +30,6 @@ const EducationForm = ({ onAdd }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-                      <h2>Education</h2>
 
             <input
                 type="text"
