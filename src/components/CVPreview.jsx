@@ -1,45 +1,38 @@
-// src/components/CVPreview.jsx
 import React from 'react';
 
 const CVPreview = ({ personalInfo, education, experience }) => {
     return (
-        <div className="cv-preview">
-            <h2>CV Preview</h2>
-            {personalInfo.name || personalInfo.email || personalInfo.phone || personalInfo.address? (
-                <div>
-                    <h3>Personal Information</h3>
-                    {personalInfo.name && <p>Name: {personalInfo.name}</p>}
-                    {personalInfo.email && <p>Email: {personalInfo.email}</p>}
-                    {personalInfo.phone && <p>Phone: {personalInfo.phone}</p>}
-                    {personalInfo.address && <p>Address: {personalInfo.address}</p>}
+        <div className="cv-preview">  
+            <div className="section">
+                <h2>Personal Information</h2>
+                <p><strong>Name:</strong> {personalInfo.name}</p>
+                <p><strong>Email:</strong> {personalInfo.email}</p>
+                <p><strong>Phone:</strong> {personalInfo.phone}</p>
+                <p><strong>Address:</strong> {personalInfo.address}</p>
+            </div>
+            <div className="section">
+                <h2>Education</h2>
+                {education.map((edu, index) => (
+                    <div key={index}>
+                        <h3>{edu.school}</h3>
+                        <p><strong>Institution:</strong> {edu.institution}</p>
+                        <p><strong>Degree:</strong> {edu.degree}</p>
+                        <p><strong>Duration:</strong> {edu.startDate} - {edu.endDate}</p>
+                    </div>
+                ))}
+            </div>
+            <div className="section">
+                <h2>Experience</h2>
+                {experience.map((exp, index) => (
+                    <div key={index}>
+                        <h3>{exp.company}</h3>
+                        <p><strong>Role:</strong> {exp.position}</p>
+                        <p><strong>Duration:</strong> {exp.startDate} - {exp.endDate}</p>
+                        <p><strong>Description:</strong> {exp.description}</p>
 
-                </div>
-            ) : null}
-            {education.length > 0 ? (
-                <div>
-                    <h3>Education</h3>
-                    {education.map((edu, index) => (
-                        <div key={index}>
-                            <h4>{edu.institution}</h4>
-                            <p>{edu.degree}</p>
-                            <p>{edu.startDate} - {edu.endDate}</p>
-                        </div>
-                    ))}
-                </div>
-            ) : null}
-            {experience.length > 0 ? (
-                <div>
-                    <h3>Experience</h3>
-                    {experience.map((exp, index) => (
-                        <div key={index}>
-                            <h4>{exp.company}</h4>
-                            <p>{exp.position}</p>
-                            <p>{exp.startDate} - {exp.endDate}</p>
-                            <p>{exp.description}</p>
-                        </div>
-                    ))}
-                </div>
-            ) : null}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
