@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   position: relative;
   background-color: #758694;
@@ -12,6 +12,7 @@
 }
 body{
   margin: 0%;
+  height: 100%;
 }
 
 /* Style for the header */
@@ -32,7 +33,9 @@ header {
   max-width: 1200px; /* Adjust max-width as needed */
   padding: 20px;
   gap: 20px; /* Add some space between the form and preview */
+  
 }
+
 
 /* Additional styles */
 h1, h2 {
@@ -52,12 +55,13 @@ p {
 }
 
 form div {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  
 }
 
 form input, form textarea {
@@ -65,8 +69,35 @@ form input, form textarea {
   padding: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-bottom: 1%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #758694; /* Change border color on focus */
+  box-shadow: 0 0 5px #758694(0, 123, 255, 0.5); /* Add shadow effect on focus */
+}
+
+form input:hover, form textarea:hover {
+  border-color: #758694; /* Change border color on hover */
+}
+form button {
+  padding: 10px 20px; /* Add padding for better spacing */
+  background-color: #758694; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+form button:hover {
+  background-color: #41474d; /* Darker background on hover */
+}
+
+form button:active {
+  background-color: #758694; /* Even darker background on click */
 }
 
 /* Style for the personal info and form sections */
@@ -81,7 +112,6 @@ form input, form textarea {
   flex: 1;
   min-width: 300px;
   padding: 1.5%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 4px;
   background-color: #fff;
   overflow-y: auto;
@@ -92,7 +122,7 @@ form input, form textarea {
 .cv-preview h2 {
   font-size: 1.5em;
   margin-bottom: 10px;
-  border-bottom: 2px solid #4CAF50;
+  border-bottom: 2px solid #405D72;
   padding-bottom: 5px;
 }
 
@@ -115,31 +145,72 @@ form input, form textarea {
   color: #555;
 }
 
-/* Style for collapsible sections */
-.collapsible {
-  background-color: #f8f9fa;
-  color: #333;
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-radius: 4px;
+  /* Style for collapsible sections */
+  .collapsible {
+    background-color: #405D72;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .collapsible:hover {
+    background-color: #506D82; /* Change background color on hover */
+    color: #e0e0e0; /* Optional: Change text color on hover */
+  }
+
+
+  .collapsible::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 12px;
+  }
+
+  .collapsible-active::after {
+    content: '\25B2'; /* Up arrow */
+  }
+
+  .collapsible-content {
+    padding: 20px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-bottom: 2%;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  }
+
+  .collapsible-active .collapsible-content {
+    display: block;
+    margin-bottom: 2%;
+    padding: 2%;
+  }
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
 }
 
-.collapsible-content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  margin-bottom: 2%;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #758694;
+  border: 2px solid #758694;
 }
 
-.collapsible-active .collapsible-content {
-  display: block;
-  margin-bottom: 2%;
-  padding: 2%;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #405D72;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #405D72; 
 }

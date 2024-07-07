@@ -30,35 +30,40 @@ const EducationForm = ({ onAdd }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-
+            <label>
+                Institution:
             <input
                 type="text"
                 name="institution"
-                placeholder="Institution"
                 value={education.institution}
                 onChange={handleChange}
             />
+            </label>
+            <label>
+                Degree:
             <input
                 type="text"
                 name="degree"
-                placeholder="Degree"
                 value={education.degree}
                 onChange={handleChange}
             />
+            </label>
+            <label>Start Date:
             <input
                 type="text"
                 name="startDate"
-                placeholder="Start Date"
                 value={education.startDate}
                 onChange={handleChange}
             />
+            </label>
+            <label>End Date:
             <input
                 type="text"
                 name="endDate"
-                placeholder="End Date"
                 value={education.endDate}
                 onChange={handleChange}
             />
+            </label>
             <button type="submit">Add Education</button>
         </form>
     );

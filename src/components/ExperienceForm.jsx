@@ -32,41 +32,43 @@ const ExperienceForm = ({ onAdd }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-
+            <label>Company:
             <input
                 type="text"
                 name="company"
-                placeholder="Company"
                 value={experience.company}
                 onChange={handleChange}
             />
+            </label>
+            <label>Position:
             <input
                 type="text"
                 name="position"
-                placeholder="Position"
                 value={experience.position}
                 onChange={handleChange}
             />
+            </label>
+            <label>Start Date:
             <input
                 type="text"
                 name="startDate"
-                placeholder="Start Date"
                 value={experience.startDate}
                 onChange={handleChange}
             />
+            </label>
+            <label>End Date:
             <input
                 type="text"
                 name="endDate"
-                placeholder="End Date"
                 value={experience.endDate}
                 onChange={handleChange}
-            />
+            /></label>
+            <label>Description:
             <textarea
                 name="description"
-                placeholder="Description"
                 value={experience.description}
                 onChange={handleChange}
-            />
+            /></label>
             <button type="submit">Add Experience</button>
         </form>
     );

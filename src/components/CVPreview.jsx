@@ -18,6 +18,7 @@ const CVPreview = ({ personalInfo, education, experience }) => {
                         <p><strong>Institution:</strong> {edu.institution}</p>
                         <p><strong>Degree:</strong> {edu.degree}</p>
                         <p><strong>Duration:</strong> {edu.startDate} - {edu.endDate}</p>
+                        <p>--------------------------------------------------------------------------------------------------------</p>
                     </div>
                 ))}
             </div>
@@ -29,7 +30,7 @@ const CVPreview = ({ personalInfo, education, experience }) => {
                         <p><strong>Role:</strong> {exp.position}</p>
                         <p><strong>Duration:</strong> {exp.startDate} - {exp.endDate}</p>
                         <p><strong>Description:</strong> {exp.description}</p>
-
+                        <p>--------------------------------------------------------------------------------------------------------</p>
                     </div>
                 ))}
             </div>
